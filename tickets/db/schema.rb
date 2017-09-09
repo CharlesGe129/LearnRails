@@ -12,15 +12,4 @@
 
 ActiveRecord::Schema.define(version: 20170909204220) do
 
-  create_table "tickets", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
-    t.string "name"
-    t.string "seat_id_seq"
-    t.text "address"
-    t.decimal "price_paid", precision: 10
-    t.string "email_address"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "phone"
-  end
-
 end
