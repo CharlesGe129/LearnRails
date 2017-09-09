@@ -1,0 +1,4 @@
+Ruby on Rails:
+
+rails g model tickets name:string
+rails db:migrate
