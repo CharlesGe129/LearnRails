@@ -31,10 +31,15 @@
     <%= form.text_field :price_paid, id: :ticket_price_paid %>
   </div>
 
-  <div class="field">
-    <%= form.label :email_address %>
-    <%= form.text_field :email_address, id: :ticket_email_address %>
-  </div>
+    <div class="field">
+      <%= form.label :email_address %>
+      <%= form.text_field :email_address, id: :ticket_email_address %>
+    </div>
+
+    <div class="field">
+      <%= form.label :phone %>
+      <%= form.text_field :phone, id: :ticket_phone %>
+    </div>
 
   <div class="actions">
     <%= form.submit %>
