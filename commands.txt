@@ -1,4 +1,7 @@
 Ruby on Rails:
 
+rails new tickets
 rails g model tickets name:string
-rails db:migrate
+rails g scaffold tickets name:string seat_id_seq:string address:text price_paid:decimal email_address:string
+rake db:migrate
+rails g migration AddPhoneToTickets phone:string
