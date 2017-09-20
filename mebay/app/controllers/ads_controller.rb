@@ -1,4 +1,5 @@
 class AdsController < ApplicationController
+  before_action :check_login_in, only: [:edit, :update]
   def index
     @ads = Ad.all
   end
@@ -27,4 +28,11 @@ class AdsController < ApplicationController
     @ad = Ad.find(params[:id])
     @ad.update_attributes(params[:ad])
   end
+
+  private
+    def check_login_in
+      authenticate_or_request_with_http_basic("Ads") do |username, password|
+        username == 'admin' && password == 'aoe123'
+      end
+    end
 end
