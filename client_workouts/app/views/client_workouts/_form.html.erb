@@ -1,0 +1,42 @@
+<%= form_with(model: client_workout, local: true) do |form| %>
+  <% if client_workout.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(client_workout.errors.count, "error") %> prohibited this client_workout from being saved:</h2>
+
+      <ul>
+      <% client_workout.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :client_name %>
+    <%= form.text_field :client_name, id: :client_workout_client_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :trainer %>
+    <%= form.text_field :trainer, id: :client_workout_trainer %>
+  </div>
+
+  <div class="field">
+    <%= form.label :duration_mins %>
+    <%= form.number_field :duration_mins, id: :client_workout_duration_mins %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date_of_workout %>
+    <%= form.date_select :date_of_workout, id: :client_workout_date_of_workout %>
+  </div>
+
+  <div class="field">
+    <%= form.label :paid_amount %>
+    <%= form.text_field :paid_amount, id: :client_workout_paid_amount %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

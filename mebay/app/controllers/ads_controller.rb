@@ -1,5 +1,5 @@
 class AdsController < ApplicationController
-  before_action :check_login_in, only: [:edit, :update]
+  before_action :check_login_in, only: [:edit, :update, :destroyt]
   def index
     @ads = Ad.all
   end
@@ -27,6 +27,12 @@ class AdsController < ApplicationController
     ActionController::Parameters.permit_all_parameters = true
     @ad = Ad.find(params[:id])
     @ad.update_attributes(params[:ad])
+  end
+
+  def destroy
+    @ad = Ad.find(params[:id])
+    @ad.destroy
+    redirect_to("/ads")
   end
 
   private
