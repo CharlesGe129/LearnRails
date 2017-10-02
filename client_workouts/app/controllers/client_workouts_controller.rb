@@ -61,6 +61,10 @@ class ClientWorkoutsController < ApplicationController
     end
   end
 
+  def find
+    @client_workouts = ClientWorkout.where(client_name: params[:search_string]).or(ClientWorkout.where(trainer: params[:search_string]))
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_client_workout
