@@ -28,6 +28,8 @@ class SeatsController < ApplicationController
 
     respond_to do |format|
       if @seat.save
+        puts 123123123123
+        puts @seat.validate
         format.html { redirect_to @seat, notice: 'Seat was successfully created.' }
         format.json { render :show, status: :created, location: @seat }
       else

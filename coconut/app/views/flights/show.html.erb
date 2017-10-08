@@ -25,6 +25,7 @@
   <%= @flight.capacity %>
 </p>
 
+<%= render :partial => 'seat_list', :locals => {:seats => @flight.seats} %>
 <%= render :partial => 'new_seat' %>
 
 <%= link_to 'Edit', edit_flight_path(@flight) %> |
